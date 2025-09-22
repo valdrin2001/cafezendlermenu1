@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Café Zendler – Getränkekarte</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fefaf6;
+      color: #3e3e3e; 
+      padding: 20px;
+      max-width: 700px;
+      margin: auto;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      border-radius: 10px;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+    .kontakt {
+      color: #5a3e2b;
+      font-weight: 600;
+      font-size: 0.95rem;
+      line-height: 1.4;
+      max-width: 300px;
+      text-align: left;
+      flex: 1;
+    }
+    .kontakt a {
+      color: #8b4513;
+      text-decoration: none;
+    }
+    .kontakt a:hover {
+      text-decoration: underline;
+    }
+    .logo-container {
+      flex: 1;
+      display: flex;
+      justify-content: center ;
+    }
+    .logo-container img {
+      max-width: 300px;
+      height: auto;
+    }
+    h1 {
+      font-size: 2.2em;
+      color: #8b4513;
+      margin: 10px 0 0 0;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-align: center;
+    }
+    h2 {
+      border-bottom: 2px solid #d2a679;
+      padding-bottom: 6px;
+      margin-top: 40px;
+      color: #5a3e2b;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    li {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px dashed #ddd;
+      font-size: 1.05em;
+    }
+    .price {
+      font-weight: 700;
+      color: #8b4513;
+    }
+    .note {
+      font-size: 0.9em;
+      font-style: italic;
+      color: #6b4e31;
+      margin-top: -10px;
+      margin-bottom: 10px;
+    }
+    nav {
+      text-align: center;
+      margin-top: 40px;
+    }
+    nav a {
+      color: #8b4513;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 1.1em;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 480px) {
+      header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 15px;
+      }
+      .kontakt {
+        max-width: 100%;
+        text-align: center;
+      }
+    }
+
+
+
+
+
+/* Kutia kryesore për dritaret */
+  .popup-row {
+    display: flex;
+    gap: 20px; /* hapësirë midis dy dritareve */
+    justify-content: center;
+    margin: 20px auto;
+    max-width: 700px;
+  }
+
+  /* Stili i secilës dritare */
+  .popup-window {
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    width: 300px;
+    position: relative;
+    text-align: center;
+  }
+
+  /* Butoni X për mbyllje */
+  .popup-close {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    background: #8b4513;
+    color: white;
+    border: none;
+    font-weight: bold;
+    font-size: 16px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  /* Foto brenda dritares */
+  .popup-window img {
+    max-width: 100%;
+    border-radius: 6px;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="kontakt">
+      <p>Hauptstraße 58 <br/>
+     88161 Lindenberg im Allgäu</p>
+      <p>Telefon: <a href="tel:083818898560">083818898560</a></p>
+      <p><a href="https://www.cafe-zendler.de" target="_blank" rel="noopener noreferrer">www.cafe-zendler.de</a></p>
+    </div>
+    <div class="logo-container">
+      <img src="https://www.cafe-zendler.de/uploads/AzLX2000/Logo.png" alt="Café Zendler Logo" />
+    </div>
+  </header>
+
+  <nav>
+    <a href="speisekarte.html">Zur Speisekarte &raquo;</a>
+  </nav>
+
+  <h1>Café Zendler</h1>
+
+  <div class="popup-row">
+
+  <div class="popup-window" id="popup1">
+    <button class="popup-close" onclick="document.getElementById('popup1').style.display='none'">&times;</button>
+    <img src="Zendler-pijet 1.jpg" alt="Reklame 1" />
+    <p>Besuchen Sie unsere Getränkekarte!</p>
+  </div>
+
+  <div class="popup-window" id="popup2">
+    <button class="popup-close" onclick="document.getElementById('popup2').style.display='none'">&times;</button>
+    <img src="Zendler-kafe 1.jpg" alt="Reklame 2" />
+    <p>Probieren Sie unseren kaffee!</p>
+  </div>
+</div>
+
+
+
+  <h2>Kaffee</h2>
+  
+  <ul>
+    <li><span>Tasse Kaffee</span> <span class="price">3,00 €</span></li>
+    <li><span>Großer Kaffee</span> <span class="price">4,00 €</span></li>
+    <li><span>Kännchen Kaffee</span> <span class="price">5,00 €</span></li>
+    <li><span>Milchkaffee</span> <span class="price">4,00 €</span></li>
+    <li><span>Kleiner Milchkaffee</span> <span class="price">3,50 €</span></li>
+    <li><span>Latte Macchiato</span> <span class="price">4,20 €</span></li>
+    <li><span>Chai Latte</span> <span class="price">3,60 €</span></li>
+    <li><span>Espresso</span> <span class="price">2,80 €</span></li>
+    <li><span>Espresso doppio</span> <span class="price">3,90 €</span></li>
+    <li><span>Espresso Macchiato</span> <span class="price">3,30 €</span></li>
+    <li><span>Espresso doppio Macchiato</span> <span class="price">4,30 €</span></li>
+    <li><span>Cappuccino</span> <span class="price">3,40 €</span></li>
+    <li><span>Großer Cappuccino</span> <span class="price">4,20 €</span></li>
+    <li><span>Alle Getränke mit Hafermilch möglich</span> <span class="price">+0,70 €</span></li>
+    <li><span>Entcoffiniert</span> <span class="price"> +0,50 €</span></li>
+  </ul>
+
+  <h2>Heiße Getränke</h2>
+  <ul>
+    <li><span>Heiße Schokolade</span> <span class="price">3,30 €</span></li>
+    <li><span>Heiße Schokolade mit Sahne</span> <span class="price">4,00 €</span></li>
+    <li><span>Schokochino</span> <span class="price">4,30 €</span></li>
+    <li><span>Tasse Tee</span> <span class="price">3,30 €</span></li>
+    <li><span>Kännchen Tee</span> <span class="price">5,10 €</span></li>
+    <li><span>Heißer Ingwer</span> <span class="price">3,70 €</span></li>
+    <li><span>Heiße Zitrone</span> <span class="price">3,60 €</span></li>
+    <li><span>Heiße Milch</span> <span class="price">3,00 €</span></li>
+    <li><span>Extra Portion Sahne</span> <span class="price">1,60 €</span></li>
+    <li><span>Extra Portion Honig</span> <span class="price">1,00 €</span></li>
+    <li><span>Kinderschoki (kleine Tasse heiße Schokolade)</span> <span class="price">2,50 €</span></li>
+  </ul>
+
+  <h2>Alkoholfreie Getränke</h2>
+  <ul>
+    <li><span>Mineralwasser Still / Medium  0,20 l</span><span class="price">2,90 €</span></li>
+    <li><span>Mineralwasser Still / Medium  0,50 l</span><span class="price">3,90 €</span></li>
+    <li><span>Mineralwasser Spritzig 0,75 l</span><span class="price">6,90 €</span></li>
+    <li><span>Saftschorle (Mango, Orange, Johannisbeere, Maracuja, Apfel) 0,20 l</span><span class="price">3,10 €</span></li>
+    <li><span>Saftschorle (Mango, Orange, Johannisbeere, Maracuja, Apfel) 0,40 l</span><span class="price">4,10 €</span></li>
+    <li><span>Saft pur 0,20 l</span><span class="price">3,30 €</span></li>
+    <li><span>Saft pur 0,40 l</span><span class="price">4,30 €</span></li>
+    <li><span>Holderschorle 0,20 l</span><span class="price">3,10 €</span></li>
+    <li><span>Holderschorle 0,40 l</span><span class="price">4,10 €</span></li>
+    <li><span>Spritzer (Rhabarber, Ingwer-Citrus)</span><span class="price">3,90 €</span></li>
+    <li><span>Almdudler</span><span class="price">3,80 €</span></li>
+    <li><span>Coca Cola, Spezi 0,20 l </span><span class="price">3,10 €</span></li>
+     <li><span>Coca Cola, Spezi 0,40 l </span><span class="price">4,10 €</span></li>
+    <li><span>Cola Zero</span><span class="price">3,60 €</span></li>
+    <li><span>Zitronenlimo  0,20 l</span><span class="price">2,90 €</span></li>
+    <li><span>Zitronenlimo  0,40 l</span><span class="price">3,70 €</span></li>
+  </ul>
+
+
+  
+  <h2>Biere</h2>
+  <ul>
+  
+    <li><span>Farny Hofgutsbier 0,50 l</span> <span class="price">4,00 €</span></li>
+    <li><span>Oscar Farny Pils 0,33 l</span> <span class="price">3,90 €</span></li>
+    <li><span>Farny Hefeweizen 0,50 l</span> <span class="price">4,10 €</span></li>
+    <li><span>Farny Hefeweizen Alkoholfrei 0,50 l</span> <span class="price">4,10 €</span></li>
+    <li><span>Farny Radler 0,50 l</span> <span class="price">4,10 €</span></li>
+    <li><span>Meckatzer Alkoholfrei 0,33 l</span> <span class="price">3,70 €</span></li>
+    <li><span>Kleines Bier 0,30 l</span> <span class="price">3,70 €</span></li>
+    <li><span>Cola Weizen 0,50 l</span> <span class="price">4,20 €</span></li>
+    <li><span>Russ 0,50 l</span> <span class="price">4,20 €</span></li>
+  </ul>
+
+  <h2>Longdrinks (0,25 l)</h2>
+  <ul>
+    <li><span>Hugo</span> <span class="price">7,00 €</span></li>
+    <li><span>Aperol Spritz</span> <span class="price">7,00 €</span></li>
+    <li><span>Ramazotti Bella / Ramazotti Mio</span> <span class="price">7,00 €</span></li>
+    <li><span>Campari Orange</span> <span class="price">6,70 €</span></li>
+    <li><span>Campari Soda</span> <span class="price">6,50 €</span></li>
+    <li><span>Lillet Wild Berry</span> <span class="price">7,00 €</span></li>
+  </ul>
+
+  <h2>Sekt & Prosecco</h2>
+  <ul>
+    <li><span>Sekt Hausmarke 0,10 l</span> <span class="price">3,80 €</span></li>
+    <li><span>Prosecco 0,10 l</span> <span class="price">3,90 €</span></li>
+    <li><span>Sekt Orange 0,10 l</span> <span class="price">3,90 €</span></li>
+  </ul>
+
+  <h2>Wein</h2>
+  <ul>
+    <li><span>Verschiedene Weinsorten 1/8 l</span> <span class="price">ab 3,60 €</span></li>
+    <li><span>Verschiedene Weinsorten 1/4 l</span> <span class="price">ab 4,70 €</span></li>
+    <li><span>Weinschorle weiß/rot - süss/sauer 0,125 l</span> <span class="price">3,60 €</span></li>
+    <li><span>Weinschorle weiß/rot - süss/sauer 0,25 l</span> <span class="price">4,20 €</span></li>
+    <li><span>Weinschorle weiß/rot - süss/sauer 0,50 l</span> <span class="price">ab 6,50 €</span></li>
+  </ul>
+
+   <nav>
+    <a href="prove.html">&laquo; Zurück zur Startseite</a>
+  </nav>
+
+</body>
+</html>

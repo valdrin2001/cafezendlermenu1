@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Café Zendler – Eiskaffee-Karte</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fefaf6;
+      color: #3e3e3e;
+      padding: 20px;
+      max-width: 700px;
+      margin: auto;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      border-radius: 10px;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+    .kontakt {
+      color: #5a3e2b;
+      font-weight: 600;
+      font-size: 0.95rem;
+      line-height: 1.4;
+      max-width: 300px;
+      text-align: left;
+      flex: 1;
+    }
+    .kontakt a {
+      color: #8b4513;
+      text-decoration: none;
+    }
+    .kontakt a:hover {
+      text-decoration: underline;
+    }
+    .logo-container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+    .logo-container img {
+      max-width: 300px;
+      height: auto;
+    }
+    h1 {
+      font-size: 2.2em;
+      color: #8b4513;
+      margin: 10px 0 0 0;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-align: center;
+    }
+    h2 {
+      border-bottom: 2px solid #d2a679;
+      padding-bottom: 6px;
+      margin-top: 40px;
+      color: #5a3e2b;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    li {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px dashed #ddd;
+      font-size: 1.05em;
+    }
+    .price {
+      font-weight: 700;
+      color: #8b4513;
+    }
+    nav {
+      text-align: center;
+      margin-top: 40px;
+    }
+    nav a {
+      color: #8b4513;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 1.1em;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 480px) {
+      header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 15px;
+      }
+      .kontakt {
+        max-width: 100%;
+        text-align: center;
+      }
+    }
+
+
+
+
+/* Kutia kryesore për dritaret */
+  .popup-row {
+    display: flex;
+    gap: 20px; /* hapësirë midis dy dritareve */
+    justify-content: center;
+    margin: 20px auto;
+    max-width: 700px;
+  }
+
+  /* Stili i secilës dritare */
+  .popup-window {
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    width: 300px;
+    position: relative;
+    text-align: center;
+  }
+
+  /* Butoni X për mbyllje */
+  .popup-close {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    background: #8b4513;
+    color: white;
+    border: none;
+    font-weight: bold;
+    font-size: 16px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  /* Foto brenda dritares */
+  .popup-window img {
+    max-width: 100%;
+    border-radius: 6px;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="kontakt">
+      <p>Hauptstraße 58<br>88161 Lindenberg im Allgäu</p>
+      <p>Telefon: <a href="tel:083818898560">083818898560</a></p>
+      <p><a href="https://www.cafe-zendler.de" target="_blank">www.cafe-zendler.de</a></p>
+    </div>
+    <div class="logo-container">
+      <img src="https://www.cafe-zendler.de/uploads/AzLX2000/Logo.png" alt="Café Zendler Logo">
+    </div>
+  </header>
+
+  <h1>Café Zendler</h1>
+  <h2>Eiskaffee-Karte</h2>
+
+
+
+<div class="popup-row">
+
+  <div class="popup-window" id="popup1">
+    <button class="popup-close" onclick="document.getElementById('popup1').style.display='none'">&times;</button>
+    <img src="espresomeportokall .jpg" alt="Reklame 1" />
+    <p>Besuchen Sie unsere Eisskaffekarte!</p>
+  </div>
+
+  <div class="popup-window" id="popup2">
+    <button class="popup-close" onclick="document.getElementById('popup2').style.display='none'">&times;</button>
+    <img src="ice chai .jpg" alt="Reklame 2" />
+    <p>Probieren Sie unseren Eiskaffee!</p>
+  </div>
+</div>
+
+<script>
+  const popup = document.getElementById('popup');
+  const closeBtn = document.getElementById('popup-close');
+
+  closeBtn.addEventListener('click', () => {
+    popup.style.display = 'none';
+  });
+</script>
+
+
+
+  <ul>
+    <li><span>Iced Latte(mit espresso)</span><span class="price">4,10 €</span></li>
+    <li><span>Iced Caramel Latte(mit espresso und caramle)</span><span class="price">4,60 €</span></li>
+    <li><span>Iced Chai Latte(normale chailatte ohne espresso)</span><span class="price">3,90 €</span></li>
+    <li><span>Iced Spicy Latte(mit espresso,chai und caramel)</span><span class="price">5,90 €</span></li>
+    <li><span>Eiskaffee</span><span class="price">4,90 €</span></li>
+    <li><span>Eisschokolade</span><span class="price">4,90 €</span></li>
+    <li><span>Eiskaffee mit Vanilleeis</span><span class="price">5,20 €</span></li>
+    <li><span>Affogato (Espresso & Vanilleeis)</span><span class="price">3,90 €</span></li>
+    <li><span>Hausgemachter Iced Latte</span><span class="price">4,50 €</span></li>
+  
+  </ul>
+
+  <nav>
+    <a href="prove.html">&laquo; Zurück zur Startseite</a>
+  </nav>
+</body>
+</html>

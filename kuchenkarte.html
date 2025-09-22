@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Café Zendler – Kuchenkarten</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fefaf6;
+      color: #3e3e3e;
+      padding: 20px;
+      max-width: 700px;
+      margin: auto;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      border-radius: 10px;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+    .kontakt {
+      color: #5a3e2b;
+      font-weight: 600;
+      font-size: 0.95rem;
+      line-height: 1.4;
+      max-width: 300px;
+      text-align: left;
+      flex: 1;
+    }
+    .kontakt a {
+      color: #8b4513;
+      text-decoration: none;
+    }
+    .kontakt a:hover {
+      text-decoration: underline;
+    }
+    .logo-container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+    .logo-container img {
+      max-width: 300px;
+      height: auto;
+    }
+    h1 {
+      font-size: 2.2em;
+      color: #8b4513;
+      margin: 10px 0 0 0;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-align: center;
+    }
+    h2 {
+      border-bottom: 2px solid #d2a679;
+      padding-bottom: 6px;
+      margin-top: 40px;
+      color: #5a3e2b;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    li {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px dashed #ddd;
+      font-size: 1.05em;
+    }
+    .price {
+      font-weight: 700;
+      color: #8b4513;
+    }
+    nav {
+      text-align: center;
+      margin-top: 40px;
+    }
+    nav a {
+      color: #8b4513;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 1.1em;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 480px) {
+      header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 15px;
+      }
+      .kontakt {
+        max-width: 100%;
+        text-align: center;
+
+
+
+      }
+
+
+
+    }
+
+
+.cake-img {
+  width: 100px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px dashed #ddd;
+  font-size: 1.05em;
+}
+li span {
+  flex-grow: 1;
+}
+
+
+
+  .video-container {
+    position: relative;
+    width: 100%;
+    max-width: 700px; /* ose sa dëshiron */
+    margin: auto;
+  }
+
+  .video-container video {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .video-text {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    background: rgba(139, 69, 19, 0.7); /* ngjyrë kafe me transparencë */
+    color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+
+
+
+
+
+
+/* Kutia kryesore për dritaret */
+  .popup-row {
+    display: flex;
+    gap: 20px; /* hapësirë midis dy dritareve */
+    justify-content: center;
+    margin: 20px auto;
+    max-width: 700px;
+  }
+
+  /* Stili i secilës dritare */
+  .popup-window {
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    width: 300px;
+    position: relative;
+    text-align: center;
+  }
+
+  /* Butoni X për mbyllje */
+  .popup-close {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    background: #8b4513;
+    color: white;
+    border: none;
+    font-weight: bold;
+    font-size: 16px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  /* Foto brenda dritares */
+  .popup-window img {
+    max-width: 100%;
+    border-radius: 6px;
+  }
+
+
+
+
+
+  .container {
+    position: relative;
+    max-width: 800px; /* rregullo madhësinë sipas nevojës */
+    margin: 0 auto;
+  }
+  .container img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  .overlay-center {
+    position: absolute;
+    inset: 0; /* top:0; right:0; bottom:0; left:0 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none; /* teksti nuk kap kliket në foto */
+  }
+  .overlay-center .text {
+    background: rgba(0,0,0,0.45); /* sfond i lehtë e errët për lexueshmëri */
+    color: #fff;
+    padding: 14px 18px;
+    border-radius: 8px;
+    font-size: 20px;
+    line-height: 1.3;
+    text-align: center;
+    max-width: 90%;
+    pointer-events: auto;
+  }
+  @media (max-width:480px){ .overlay-center .text{font-size:16px} }
+
+
+
+
+
+
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="kontakt">
+      <p>Hauptstraße 58<br>88161 Lindenberg im Allgäu</p>
+      <p>Telefon: <a href="tel:083818898560">083818898560</a></p>
+      <p><a href="https://www.cafe-zendler.de" target="_blank">www.cafe-zendler.de</a></p>
+    </div>
+    <div class="logo-container">
+      <img src="https://www.cafe-zendler.de/uploads/AzLX2000/Logo.png" alt="Café Zendler Logo">
+    </div>
+  </header>
+
+  <h1>Café Zendler</h1>
+  <h2>Kuchenkarten</h2>
+
+<div class="popup-row">
+
+  <div class="popup-window" id="popup1">
+    <button class="popup-close" onclick="document.getElementById('popup1').style.display='none'">&times;</button>
+    <img src="torte 10.jpg" alt="Reklame 1" />
+    <p>Besuchen Sie unsere Kuchenkarte!</p>
+  </div>
+
+  <div class="popup-window" id="popup2">
+    <button class="popup-close" onclick="document.getElementById('popup2').style.display='none'">&times;</button>
+    <img src="torten 11.jpg" alt="Reklame 2" />
+    <p>Probieren Sie unseren Kuchen !</p>
+  </div>
+
+
+</div>
+
+<div class="container">
+    <img src="WhatsApp Image 2025-08-10 at 22.35.35_97d6af60.jpg" alt="Foto">
+    <div class="overlay-center">
+      <div class="text">
+        Bitte bestellen Sie Ihre Torte vorab an der Theke,<br>
+        Sie erhalten eine Nummer auf einem Zettel,<br>
+         und unser Kellner bringt die Torte an Ihren Tisch."
+      </div>
+    </div>
+  </div>
+
+<h2>Unsere Spezialtorten 🎂</h2>
+
+<div class="popup-row">
+  <div class="popup-window">
+    <img src="D14.jpg" src="D1.jpg" alt="Torte für Geburtstag">
+    <H1>Geburtstags-Torte nur 50 €</H1>
+    <H1>Hochzeit-Torte nur 50 €</H1>
+    <H1>Tauf-Torte nur 50 €</H1>
+  </div>
+
+  <div class="popup-window">
+    <img src="H2.jpg" alt="Torte für Hochzeit">
+    <H1>Torte für Festlichkeiten  nur 50 €</H1>
+  </div>
+  
+
+</div>
+
+  
+
+</div>
+
+
+ <img src="D1.jpg" alt="Leckere Torte" style="width: 100%; height: auto; border-radius: 8px;">
+<img src="D2.jpg" alt="Leckere Torte" style="width: 100%; height: auto; border-radius: 8px;">
+ <img src="D3.jpg" alt="Leckere Torte" style="width: 100%; height: auto; border-radius: 8px;">
+<img src="D4.jpg" alt="Leckere Torte" style="width: 100%; height: auto; border-radius: 8px;">
+ <img src="D5.jpg" alt="Leckere Torte" style="width: 100%; height: auto; border-radius: 8px;">
+<img src="D6.jpg" alt="Leckere Torte" style="width: 100%; height: auto; border-radius: 8px;">
+ <img src="D7.jpg" alt="Leckere Torte" style="width: 100%; height: auto; border-radius: 8px;">
+<img src="D8.jpg" alt="Leckere Torte" style="width: 100%; height: auto; border-radius: 8px;">
+ <img src="D9.jpg" alt="Leckere Torte" style="width: 100%; height: auto; border-radius: 8px;">
+<img src="D10.jpg" alt="Leckere Torte" style="width: 100%; height: auto; border-radius: 8px;">
+ <img src="D11.jpg" alt="Leckere Torte" style="width: 100%; height: auto; border-radius: 8px;">
+  <img src="D12.jpg" alt="Leckere Torte" style="width: 100%; height: auto; border-radius: 8px;">
+<img src="D13.jpg" alt="Leckere Torte" style="width: 100%; height: auto; border-radius: 8px;">
+ <img src="D14.jpg" alt="Leckere Torte" style="width: 100%; height: auto; border-radius: 8px;">
+<img src="D15.jpg" alt="Leckere Torte" style="width: 100%; height: auto; border-radius: 8px;">
+ <img src="D16.jpg" alt="Leckere Torte" style="width: 100%; height: auto; border-radius: 8px;">
+<img src="D17.jpg" alt="Leckere Torte" style="width: 100%; height: auto; border-radius: 8px;">
+ <img src="D18.jpg" alt="Leckere Torte" style="width: 100%; height: auto; border-radius: 8px;">
+<img src="D19.jpg" alt="Leckere Torte" style="width: 100%; height: auto; border-radius: 8px;">
+<img src="D20.jpg" alt="Leckere Torte" style="width: 100%; height: auto; border-radius: 8px;">
+ <img src="D21.jpg" alt="Leckere Torte" style="width: 100%; height: auto; border-radius: 8px;">
+<img src="D22.jpg" alt="Leckere Torte" style="width: 100%; height: auto; border-radius: 8px;"> 
+ <img src="D23.jpg" alt="Leckere Torte" style="width: 100%; height: auto; border-radius: 8px;">
+<img src="D24.jpg" alt="Leckere Torte" style="width: 100%; height: auto; border-radius: 8px;">
+ <img src="D25.jpg" alt="Leckere Torte" style="width: 100%; height: auto; border-radius: 8px;">
+<img src="D26.jpg" alt="Leckere Torte" style="width: 100%; height: auto; border-radius: 8px;">
+ <img src="D27.jpg" alt="Leckere Torte" style="width: 100%; height: auto; border-radius: 8px;">
+<img src="D28.jpg" alt="Leckere Torte" style="width: 100%; height: auto; border-radius: 8px;">
+ <img src="H1.jpg" alt="Leckere Torte" style="width: 100%; height: auto; border-radius: 8px;">
+<img src="H2.jpg" alt="Leckere Torte" style="width: 100%; height: auto; border-radius: 8px;">
+<img src="H3.jpg" alt="Leckere Torte" style="width: 100%; height: auto; border-radius: 8px;">
+<img src="H4.jpg" alt="Leckere Torte" style="width: 100%; height: auto; border-radius: 8px;">
+<img src="H5.jpg" alt="Leckere Torte" style="width: 100%; height: auto; border-radius: 8px;">
+<img src="H5.jpg" alt="Leckere Torte" style="width: 100%; height: auto; border-radius: 8px;">
+ <img src="H6.jpg" alt="Leckere Torte" style="width: 100%; height: auto; border-radius: 8px;">
+<img src="H7.jpg" alt="Leckere Torte" style="width: 100%; height: auto; border-radius: 8px;">
+<img src="H8.jpg" alt="Leckere Torte" style="width: 100%; height: auto; border-radius: 8px;">
+<img src="H9.jpg" alt="Leckere Torte" style="width: 100%; height: auto; border-radius: 8px;">
+<img src="H10.jpg" alt="Leckere Torte" style="width: 100%; height: auto; border-radius: 8px;">
+<img src="H11.jpg" alt="Leckere Torte" style="width: 100%; height: auto; border-radius: 8px;">
+ <img src="H12.jpg" alt="Leckere Torte" style="width: 100%; height: auto; border-radius: 8px;">
+<img src="H14.jpg" alt="Leckere Torte" style="width: 100%; height: auto; border-radius: 8px;">
+<img src="H15.jpg" alt="Leckere Torte" style="width: 100%; height: auto; border-radius: 8px;">
+<img src="H16.jpg" alt="Leckere Torte" style="width: 100%; height: auto; border-radius: 8px;">
+<img src="H17.jpg" alt="Leckere Torte" style="width: 100%; height: auto; border-radius: 8px;">
+
+
+
+
+
+ <img src="WhatsApp Image 2025-08-10 at 22.35.35_97d6af60.jpg" alt="Leckere Torte" style="width: 100%; height: auto; border-radius: 8px;">
+<img src="WhatsApp Image 2025-08-10 at 22.35.36_991da2a2.jpg" alt="Leckere Torte" style="width: 100%; height: auto; border-radius: 8px;">
+
+  <nav>
+    <a href="prove.html">&laquo; Zurück zur Startseite</a>
+  </nav>
+</body>
+</html>
